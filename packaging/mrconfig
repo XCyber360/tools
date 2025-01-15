@@ -1,0 +1,2228 @@
+[DEFAULT]
+jobs = 4
+
+## Ignore svn/cvs metadata
+svn_test = false
+cvs_test = false
+
+## Checkout the Debian branch if it exists
+post_checkout =
+  cd $MR_REPO
+  if git show-ref -q --verify refs/remotes/origin/debian; then
+    git branch --track debian origin/debian
+  fi
+
+## Update the 3 branches, plus the Debian branch if it exists
+update =
+  gbp pull
+  if git show-ref -q --verify refs/remotes/origin/debian; then
+    if ! git show-ref -q --verify refs/heads/debian; then
+      git branch --track debian origin/debian
+    fi
+    git fetch origin debian:debian
+  fi
+
+[0trace]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/0trace.git
+
+[aadict]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aadict.git
+
+[aardwolf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aardwolf.git
+
+[above]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/above.git
+
+[acstore]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/acstore.git
+
+[adw-gtk3-kali]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/adw-gtk3-kali.git
+
+[aesedb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aesedb.git
+
+[aiocmd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aiocmd.git
+
+[aiomultiprocess]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aiomultiprocess.git
+
+[aiosmb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aiosmb.git
+
+[aiowinreg]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/aiowinreg.git
+
+[airgeddon]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/airgeddon.git
+
+[amap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/amap.git
+
+[amass]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/amass.git
+
+[apache-users]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/apache-users.git
+
+[apispec-webframeworks]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/apispec-webframeworks.git
+
+[apple-bleee]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/apple-bleee.git
+
+[arc4]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/arc4.git
+
+[arkime]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/arkime.git
+
+[armitage]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/armitage.git
+
+[asleap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/asleap.git
+
+[asn1tools]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/asn1tools.git
+
+[asyauth]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/asyauth.git
+
+[asysocks]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/asysocks.git
+
+[autopsy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/autopsy.git
+
+[autorecon]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/autorecon.git
+
+[b374k]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/b374k.git
+
+[backoff]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/backoff.git
+
+[base-files]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/base-files.git
+
+[base91]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/base91.git
+
+[bed]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bed.git
+
+[beef-xss]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/beef-xss.git
+
+[berate-ap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/berate-ap.git
+
+[bettercap-caplets]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bettercap-caplets.git
+
+[bettercap-ui]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bettercap-ui.git
+
+[betterlockscreen]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/betterlockscreen.git
+
+[bing-ip2hosts]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bing-ip2hosts.git
+
+[blackduck]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/blackduck.git
+
+[bloodhound]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bloodhound.git
+
+[bloodhound.py]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bloodhound.py.git
+
+[bloodyad]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bloodyad.git
+
+[blue-hydra]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/blue-hydra.git
+
+[bluelog]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bluelog.git
+
+[blueranger]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/blueranger.git
+
+[bluesnarfer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bluesnarfer.git
+
+[broker]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/broker.git
+
+[bruteshark]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bruteshark.git
+
+[brutespray]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/brutespray.git
+
+[bulk-extractor]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bulk-extractor.git
+
+[burpsuite]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/burpsuite.git
+
+[bytecode-viewer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/bytecode-viewer.git
+
+[cabby]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cabby.git
+
+[caldera]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/caldera.git
+
+[calico]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/calico.git
+
+[cassandra]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cassandra.git
+
+[certgraph]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/certgraph.git
+
+[certi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/certi.git
+
+[certipy-ad]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/certipy-ad.git
+
+[chainsaw]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/chainsaw.git
+
+[changeme]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/changeme.git
+
+[chisel]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/chisel.git
+
+[cilium-cli]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cilium-cli.git
+
+[ciphey]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ciphey.git
+
+[cipheycore]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cipheycore.git
+
+[cipheydists]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cipheydists.git
+
+[cisco-auditing-tool]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cisco-auditing-tool.git
+
+[cisco-global-exploiter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cisco-global-exploiter.git
+
+[cisco-ocs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cisco-ocs.git
+
+[cisco-torch]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cisco-torch.git
+
+[cloudbrute]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cloudbrute.git
+
+[cloudflare-scrape]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cloudflare-scrape.git
+
+[cmospwd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cmospwd.git
+
+[cmseek]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cmseek.git
+
+[code-oss]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/code-oss.git
+
+[coercer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/coercer.git
+
+[colly]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/colly.git
+
+[command-not-found]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/command-not-found.git
+
+[commix]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/commix.git
+
+[conky-manager]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/conky-manager.git
+
+[copy-router-config]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/copy-router-config.git
+
+[cosign]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cosign.git
+
+[covenant-kbx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/covenant-kbx.git
+
+[cpe]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cpe.git
+
+[crackle]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/crackle.git
+
+[crackmapexec]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/crackmapexec.git
+
+[cri-tools]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cri-tools.git
+
+[crowbar]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/crowbar.git
+
+[cryptcat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cryptcat.git
+
+[cti-taxii-client]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cti-taxii-client.git
+
+[ctypescrypto]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ctypescrypto.git
+
+[cupid-wpa]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cupid-wpa.git
+
+[cvss]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cvss.git
+
+[cyberchef]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cyberchef.git
+
+[cymothoa]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/cymothoa.git
+
+[daq]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/daq.git
+
+[daq3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/daq3.git
+
+[davtest]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/davtest.git
+
+[dbd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dbd.git
+
+[dbeaver]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dbeaver.git
+
+[ddrescue]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ddrescue.git
+
+[debian-cd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/debian-cd.git
+
+[debian-installer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/debian-installer.git
+
+[defectdojo]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/defectdojo.git
+
+[desktop-base]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/desktop-base.git
+
+[device-pharmer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/device-pharmer.git
+
+[dex2jar]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dex2jar.git
+
+[dfvfs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dfvfs.git
+
+[dhcplib]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dhcplib.git
+
+[dirbuster]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dirbuster.git
+
+[dissect.cstruct]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dissect.cstruct.git
+
+[django-auditlog]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/django-auditlog.git
+
+[django-crum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/django-crum.git
+
+[django-fieldsignals]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/django-fieldsignals.git
+
+[django-multiselectfield]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/django-multiselectfield.git
+
+[django-tagulous]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/django-tagulous.git
+
+[django-watson]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/django-watson.git
+
+[dnscat2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dnscat2.git
+
+[dnschef]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dnschef.git
+
+[dnsgen]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dnsgen.git
+
+[dnsx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dnsx.git
+
+[donut-shellcode]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/donut-shellcode.git
+
+[dotdotpwn]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dotdotpwn.git
+
+[dpkg]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dpkg.git
+
+[dploot]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dploot.git
+
+[dradis]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dradis.git
+
+[dronekit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dronekit.git
+
+[dscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dscan.git
+
+[dsnap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dsnap.git
+
+[dufflebag]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dufflebag.git
+
+[dumpsterdiver]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dumpsterdiver.git
+
+[dumpzilla]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dumpzilla.git
+
+[dvwa]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/dvwa.git
+
+[eaphammer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/eaphammer.git
+
+[eapmd5pass]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/eapmd5pass.git
+
+[eksctl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/eksctl.git
+
+[email2phonenumber]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/email2phonenumber.git
+
+[emailharvester]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/emailharvester.git
+
+[enum4linux]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/enum4linux.git
+
+[enum4linux-ng]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/enum4linux-ng.git
+
+[enumiax]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/enumiax.git
+
+[evil-ssdp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/evil-ssdp.git
+
+[evil-winrm]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/evil-winrm.git
+
+[evilginx2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/evilginx2.git
+
+[exe2hexbat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/exe2hexbat.git
+
+[exiflooter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/exiflooter.git
+
+[exploitdb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/exploitdb.git
+
+[exploitdb-bin-sploits]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/exploitdb-bin-sploits.git
+
+[exploitdb-papers]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/exploitdb-papers.git
+
+[eyewitness]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/eyewitness.git
+
+[fake-useragent]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/fake-useragent.git
+
+[faraday-agent-dispatcher]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/faraday-agent-dispatcher.git
+
+[faraday-agent-parameters-types]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/faraday-agent-parameters-types.git
+
+[faraday-cli]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/faraday-cli.git
+
+[faraday-plugins]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/faraday-plugins.git
+
+[fern-wifi-cracker]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/fern-wifi-cracker.git
+
+[feroxbuster]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/feroxbuster.git
+
+[ferret-sidejack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ferret-sidejack.git
+
+[fiked]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/fiked.git
+
+[finalrecon]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/finalrecon.git
+
+[findomain]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/findomain.git
+
+[firefox-developer-edition-kbx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/firefox-developer-edition-kbx.git
+
+[firmware-mod-kit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/firmware-mod-kit.git
+
+[flask-celery-helper]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/flask-celery-helper.git
+
+[flask-jsglue]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/flask-jsglue.git
+
+[flask-kvsession]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/flask-kvsession.git
+
+[fleep]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/fleep.git
+
+[fragrouter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/fragrouter.git
+
+[framework2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/framework2.git
+
+[freeradius-wpe]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/freeradius-wpe.git
+
+[ftester]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ftester.git
+
+[fxscintilla]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/fxscintilla.git
+
+[gdb-peda]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gdb-peda.git
+
+[getallurls]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/getallurls.git
+
+[getsploit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/getsploit.git
+
+[ghidra]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ghidra.git
+
+[ghidra-data]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ghidra-data.git
+
+[globre]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/globre.git
+
+[gnome-shell]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gnome-shell.git
+
+[gnome-shell-extensions]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gnome-shell-extensions.git
+
+[gnome-terminal]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gnome-terminal.git
+
+[godoh]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/godoh.git
+
+[golang-github-akamensky-argparse]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-akamensky-argparse.git
+
+[golang-github-andrew-d-go-termutil]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-andrew-d-go-termutil.git
+
+[golang-github-antchfx-xmlquery]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-antchfx-xmlquery.git
+
+[golang-github-binject-debug]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-binject-debug.git
+
+[golang-github-binject-go-donut]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-binject-go-donut.git
+
+[golang-github-cretz-gopaque]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-cretz-gopaque.git
+
+[golang-github-domainr-whois]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-domainr-whois.git
+
+[golang-github-domainr-whoistest]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-domainr-whoistest.git
+
+[golang-github-haccer-available]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-haccer-available.git
+
+[golang-github-ipinfo-go-ipinfo]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-ipinfo-go-ipinfo.git
+
+[golang-github-jamesog-iptoasn]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jamesog-iptoasn.git
+
+[golang-github-jawher-mow.cli]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jawher-mow.cli.git
+
+[golang-github-jpillora-ansi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jpillora-ansi.git
+
+[golang-github-jpillora-overseer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jpillora-overseer.git
+
+[golang-github-jpillora-requestlog]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jpillora-requestlog.git
+
+[golang-github-jpillora-s3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jpillora-s3.git
+
+[golang-github-jpillora-sizestr]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-jpillora-sizestr.git
+
+[golang-github-kennygrant-sanitize]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-kennygrant-sanitize.git
+
+[golang-github-m-mizutani-urlscan-go]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-m-mizutani-urlscan-go.git
+
+[golang-github-mwitkow-go-http-dialer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-mwitkow-go-http-dialer.git
+
+[golang-github-ne0nd0g-ja3transport]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-ne0nd0g-ja3transport.git
+
+[golang-github-nlnwa-whatwg-url]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-nlnwa-whatwg-url.git
+
+[golang-github-oxffaa-gopher-parse-sitemap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-oxffaa-gopher-parse-sitemap.git
+
+[golang-github-projectdiscovery-gologger]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-projectdiscovery-gologger.git
+
+[golang-github-saintfish-chardet]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-saintfish-chardet.git
+
+[golang-github-tomasen-realip]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-tomasen-realip.git
+
+[golang-github-trung-jwt-tools]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-trung-jwt-tools.git
+
+[golang-github-willf-bitset]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-github-willf-bitset.git
+
+[golang-go.dedis-fixbuf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-go.dedis-fixbuf.git
+
+[golang-go.dedis-kyber]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-go.dedis-kyber.git
+
+[golang-go.dedis-protobuf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/golang-go.dedis-protobuf.git
+
+[goofile]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/goofile.git
+
+[google-nexus-tools]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/google-nexus-tools.git
+
+[gophish]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gophish.git
+
+[goshs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/goshs.git
+
+[gospider]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gospider.git
+
+[gowitness]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gowitness.git
+
+[gpp-decrypt]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gpp-decrypt.git
+
+[gps3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/gps3.git
+
+[grub-btrfs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/grub-btrfs.git
+
+[grub-cloud]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/grub-cloud.git
+
+[grub2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/grub2.git
+
+[h8mail]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/h8mail.git
+
+[hak5-wifi-coconut]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hak5-wifi-coconut.git
+
+[hakrawler]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hakrawler.git
+
+[hamster-sidejack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hamster-sidejack.git
+
+[hash-identifier]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hash-identifier.git
+
+[hashcat-utils]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hashcat-utils.git
+
+[havoc]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/havoc.git
+
+[hb-honeypot]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hb-honeypot.git
+
+[heartleech]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/heartleech.git
+
+[hekatomb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hekatomb.git
+
+[hexinject]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hexinject.git
+
+[hostapd-mana]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hostapd-mana.git
+
+[hostapd-wpe]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hostapd-wpe.git
+
+[hosthunter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hosthunter.git
+
+[hostsman]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hostsman.git
+
+[hotpatch]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hotpatch.git
+
+[htshells]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/htshells.git
+
+[httprint]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/httprint.git
+
+[httprobe]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/httprobe.git
+
+[httpx-toolkit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/httpx-toolkit.git
+
+[hubble]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hubble.git
+
+[humble]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/humble.git
+
+[hurl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hurl.git
+
+[hyperion]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/hyperion.git
+
+[i3-dotfiles]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/i3-dotfiles.git
+
+[i3lock-color]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/i3lock-color.git
+
+[iaxflood]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/iaxflood.git
+
+[ibombshell]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ibombshell.git
+
+[ident-user-enum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ident-user-enum.git
+
+[imhex]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/imhex.git
+
+[imhex-patterns]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/imhex-patterns.git
+
+[impacket-scripts]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/impacket-scripts.git
+
+[init-system-helpers]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/init-system-helpers.git
+
+[inspy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/inspy.git
+
+[intrace]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/intrace.git
+
+[inviteflood]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/inviteflood.git
+
+[ip2proxy-python]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ip2proxy-python.git
+
+[ipv6-toolkit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ipv6-toolkit.git
+
+[ismtp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ismtp.git
+
+[isr-evilgrade]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/isr-evilgrade.git
+
+[ivre]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ivre.git
+
+[jadx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/jadx.git
+
+[javasnoop]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/javasnoop.git
+
+[jboss-autopwn]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/jboss-autopwn.git
+
+[jd-gui]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/jd-gui.git
+
+[jefferson]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/jefferson.git
+
+[john]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/john.git
+
+[johnny]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/johnny.git
+
+[joomscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/joomscan.git
+
+[joplin]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/joplin.git
+
+[js2py]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/js2py.git
+
+[jsp-file-browser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/jsp-file-browser.git
+
+[jsql]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/jsql.git
+
+[juice-shop]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/juice-shop.git
+
+[kali-archive-keyring]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-archive-keyring.git
+
+[kali-autopilot]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-autopilot.git
+
+[kali-community-wallpapers]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-community-wallpapers.git
+
+[kali-defaults]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-defaults.git
+
+[kali-grant-root]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-grant-root.git
+
+[kali-hidpi-mode]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-hidpi-mode.git
+
+[kali-hw-gemini]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-hw-gemini.git
+
+[kali-hw-pinephone]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-hw-pinephone.git
+
+[kali-hw-pinephonepro]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-hw-pinephonepro.git
+
+[kali-menu]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-menu.git
+
+[kali-meta]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-meta.git
+
+[kali-root-login]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-root-login.git
+
+[kali-screensaver]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-screensaver.git
+
+[kali-themes]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-themes.git
+
+[kali-tweaks]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-tweaks.git
+
+[kali-undercover]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-undercover.git
+
+[kali-wallpapers]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-wallpapers.git
+
+[kali-win-kex]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kali-win-kex.git
+
+[kalibrate-rtl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kalibrate-rtl.git
+
+[kalipi-config]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kalipi-config.git
+
+[kalipi-tft-config]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kalipi-tft-config.git
+
+[kerberoast]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kerberoast.git
+
+[kismet]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kismet.git
+
+[kismet-docs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kismet-docs.git
+
+[koadic]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/koadic.git
+
+[kubernetes-helm]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kubernetes-helm.git
+
+[kustomize]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kustomize.git
+
+[kwin-style-kali]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/kwin-style-kali.git
+
+[lapsdumper]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/lapsdumper.git
+
+[laudanum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/laudanum.git
+
+[lbd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/lbd.git
+
+[legion]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/legion.git
+
+[libadwaita-1]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libadwaita-1.git
+
+[libaio]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libaio.git
+
+[libcaes]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libcaes.git
+
+[libcrafter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libcrafter.git
+
+[libfcrypto]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libfcrypto.git
+
+[libfindrtp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libfindrtp.git
+
+[libfsfat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libfsfat.git
+
+[libphdi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libphdi.git
+
+[libstree]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libstree.git
+
+[libtaxii]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libtaxii.git
+
+[libvsapm]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/libvsapm.git
+
+[lief]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/lief.git
+
+[ligolo-ng]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ligolo-ng.git
+
+[limiter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/limiter.git
+
+[linkedin2username]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/linkedin2username.git
+
+[linux]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/linux.git
+
+[linux-exploit-suggester]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/linux-exploit-suggester.git
+
+[live-build]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/live-build.git
+
+[lzallright]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/lzallright.git
+
+[maltego]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/maltego.git
+
+[maltego-teeth]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/maltego-teeth.git
+
+[manuf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/manuf.git
+
+[maryam]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/maryam.git
+
+[masky]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/masky.git
+
+[massdns]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/massdns.git
+
+[mchange-commons-java]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mchange-commons-java.git
+
+[md2pdf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/md2pdf.git
+
+[merlin]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/merlin.git
+
+[merlin-agent]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/merlin-agent.git
+
+[metagoofil]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/metagoofil.git
+
+[metasploit-framework]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/metasploit-framework.git
+
+[mfterm]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mfterm.git
+
+[mimikatz]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mimikatz.git
+
+[mitm6]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mitm6.git
+
+[mitmproxy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mitmproxy.git
+
+[mitmproxy-rs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mitmproxy-rs.git
+
+[mitmproxy-wireguard]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mitmproxy-wireguard.git
+
+[mongo-tooling-metrics]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mongo-tooling-metrics.git
+
+[mongo-tools]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mongo-tools.git
+
+[mongodb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mongodb.git
+
+[more-termcolor]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/more-termcolor.git
+
+[msfpc]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/msfpc.git
+
+[msldap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/msldap.git
+
+[mssqlpwner]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mssqlpwner.git
+
+[multiforcer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/multiforcer.git
+
+[multimac]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/multimac.git
+
+[mxcheck]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mxcheck.git
+
+[mypy-boto3-ebs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/mypy-boto3-ebs.git
+
+[naabu]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/naabu.git
+
+[naked]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/naked.git
+
+[name-that-hash]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/name-that-hash.git
+
+[nassl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nassl.git
+
+[nbtscan-unixwiz]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nbtscan-unixwiz.git
+
+[ncat-w32]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ncat-w32.git
+
+[neo4j]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/neo4j.git
+
+[neo4j-python-driver]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/neo4j-python-driver.git
+
+[neobolt]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/neobolt.git
+
+[neotime]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/neotime.git
+
+[net-retriever]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/net-retriever.git
+
+[netcfg]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/netcfg.git
+
+[netexec]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/netexec.git
+
+[nethunter-utils]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nethunter-utils.git
+
+[netscanner]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/netscanner.git
+
+[nextnet]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nextnet.git
+
+[nfsclient]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nfsclient.git
+
+[nikto]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nikto.git
+
+[nipper-ng]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nipper-ng.git
+
+[nishang]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nishang.git
+
+[nmap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nmap.git
+
+[nomachine-amd64]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nomachine-amd64.git
+
+[nomachine-arm64]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nomachine-arm64.git
+
+[nomachine-armhf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nomachine-armhf.git
+
+[nomachine-i386]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nomachine-i386.git
+
+[nuclei]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/nuclei.git
+
+[obsidian]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/obsidian.git
+
+[oclgausscrack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/oclgausscrack.git
+
+[odat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/odat.git
+
+[odpi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/odpi.git
+
+[offsec-courses]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/offsec-courses.git
+
+[ohrwurm]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ohrwurm.git
+
+[ollydbg]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ollydbg.git
+
+[opentaxii]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/opentaxii.git
+
+[oracle-instantclient-basic]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/oracle-instantclient-basic.git
+
+[oracle-instantclient-devel]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/oracle-instantclient-devel.git
+
+[oracle-instantclient-sqlplus]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/oracle-instantclient-sqlplus.git
+
+[oscanner]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/oscanner.git
+
+[osrframework]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/osrframework.git
+
+[owasp-mantra-ff]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/owasp-mantra-ff.git
+
+[owl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/owl.git
+
+[pack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pack.git
+
+[pack2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pack2.git
+
+[packageurl-python]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/packageurl-python.git
+
+[pacu]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pacu.git
+
+[padbuster]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/padbuster.git
+
+[paros]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/paros.git
+
+[parsero]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/parsero.git
+
+[partman-auto]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/partman-auto.git
+
+[partman-btrfs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/partman-btrfs.git
+
+[passdetective]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/passdetective.git
+
+[passing-the-hash]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/passing-the-hash.git
+
+[passwordmeter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/passwordmeter.git
+
+[payloadsallthethings]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/payloadsallthethings.git
+
+[pdf-parser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pdf-parser.git
+
+[pdfid]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pdfid.git
+
+[peass-ng]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/peass-ng.git
+
+[peirates]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/peirates.git
+
+[perl-cisco-copyconfig]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/perl-cisco-copyconfig.git
+
+[phishery]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/phishery.git
+
+[photon]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/photon.git
+
+[phpggc]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/phpggc.git
+
+[phpsploit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/phpsploit.git
+
+[pi-bluetooth]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pi-bluetooth.git
+
+[pipal]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pipal.git
+
+[pixelmatch-py]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pixelmatch-py.git
+
+[plaso]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/plaso.git
+
+[playwright-python]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/playwright-python.git
+
+[plotext]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/plotext.git
+
+[policykit-1]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/policykit-1.git
+
+[portspoof]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/portspoof.git
+
+[poshc2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/poshc2.git
+
+[powercat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/powercat.git
+
+[powershell-empire]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/powershell-empire.git
+
+[powersploit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/powersploit.git
+
+[protos-sip]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/protos-sip.git
+
+[proxify]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/proxify.git
+
+[proximoth]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/proximoth.git
+
+[proxmark3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/proxmark3.git
+
+[pskracker]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pskracker.git
+
+[pspy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pspy.git
+
+[pulseaudio-module-xrdp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pulseaudio-module-xrdp.git
+
+[pwnat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pwnat.git
+
+[pwncat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pwncat.git
+
+[py-sneakers]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/py-sneakers.git
+
+[py2neo]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/py2neo.git
+
+[pyasyncore]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyasyncore.git
+
+[pybase62]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pybase62.git
+
+[pyexcel]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexcel.git
+
+[pyexcel-io]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexcel-io.git
+
+[pyexcel-ods]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexcel-ods.git
+
+[pyexcel-text]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexcel-text.git
+
+[pyexcel-xls]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexcel-xls.git
+
+[pyexcel-xlsx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexcel-xlsx.git
+
+[pyexploitdb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyexploitdb.git
+
+[pyfatfs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyfatfs.git
+
+[pygexf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pygexf.git
+
+[pyinstaller]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyinstaller.git
+
+[pyinstxtractor]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyinstxtractor.git
+
+[pyjsparser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyjsparser.git
+
+[pylnk]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pylnk.git
+
+[pymavlink]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pymavlink.git
+
+[pymetasploit3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pymetasploit3.git
+
+[pymisp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pymisp.git
+
+[pypcapfile]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pypcapfile.git
+
+[pyperscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyperscan.git
+
+[pyppeteer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyppeteer.git
+
+[pypsrp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pypsrp.git
+
+[pypykatz]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pypykatz.git
+
+[pysecretsocks]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pysecretsocks.git
+
+[pyshodan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyshodan.git
+
+[pysigma]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pysigma.git
+
+[pysmb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pysmb.git
+
+[pytest-factoryboy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pytest-factoryboy.git
+
+[python-adblockparser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-adblockparser.git
+
+[python-adns]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-adns.git
+
+[python-advancedhttpserver]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-advancedhttpserver.git
+
+[python-arpspoof]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-arpspoof.git
+
+[python-asset]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-asset.git
+
+[python-bluepy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-bluepy.git
+
+[python-cffi-py2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-cffi-py2.git
+
+[python-cherrypy-cors]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-cherrypy-cors.git
+
+[python-cstruct]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-cstruct.git
+
+[python-cursor]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-cursor.git
+
+[python-dsinternals]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-dsinternals.git
+
+[python-emailahoy3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-emailahoy3.git
+
+[python-extproxy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-extproxy.git
+
+[python-faraday]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-faraday.git
+
+[python-filebytes]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-filebytes.git
+
+[python-filedepot]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-filedepot.git
+
+[python-filteralchemy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-filteralchemy.git
+
+[python-flask-classful]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-flask-classful.git
+
+[python-fontawesomefree]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-fontawesomefree.git
+
+[python-googlesearch]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-googlesearch.git
+
+[python-httpagentparser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-httpagentparser.git
+
+[python-icmplib]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-icmplib.git
+
+[python-ipwhois]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-ipwhois.git
+
+[python-kismet-external]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-kismet-external.git
+
+[python-lml]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-lml.git
+
+[python-lsassy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-lsassy.git
+
+[python-magic-ahupp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-magic-ahupp.git
+
+[python-minidump]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-minidump.git
+
+[python-minikerberos]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-minikerberos.git
+
+[python-nplusone]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-nplusone.git
+
+[python-obfuscator]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-obfuscator.git
+
+[python-owasp-zap-v2.4]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-owasp-zap-v2.4.git
+
+[python-policyuniverse]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-policyuniverse.git
+
+[python-pptx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-pptx.git
+
+[python-publicsuffixlist]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-publicsuffixlist.git
+
+[python-pycognito]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-pycognito.git
+
+[python-pyinstaller-hooks-contrib]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-pyinstaller-hooks-contrib.git
+
+[python-pyric]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-pyric.git
+
+[python-pyshark]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-pyshark.git
+
+[python-python-anticaptcha]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-python-anticaptcha.git
+
+[python-pythontoolskit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-pythontoolskit.git
+
+[python-registeredeventlistener]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-registeredeventlistener.git
+
+[python-roguehostapd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-roguehostapd.git
+
+[python-rtlsdr]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-rtlsdr.git
+
+[python-secure]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-secure.git
+
+[python-selenium]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-selenium.git
+
+[python-simple-rest-client]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-simple-rest-client.git
+
+[python-simplekv]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-simplekv.git
+
+[python-sqlalchemy-schemadisplay]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-sqlalchemy-schemadisplay.git
+
+[python-status]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-status.git
+
+[python-stringdist]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-stringdist.git
+
+[python-syslog-rfc5424-formatter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-syslog-rfc5424-formatter.git
+
+[python-visvis]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-visvis.git
+
+[python-webargs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-webargs.git
+
+[python-whois]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-whois.git
+
+[python-zlib-wrapper]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/python-zlib-wrapper.git
+
+[pythonping]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pythonping.git
+
+[pytsk]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pytsk.git
+
+[pyuserinput]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyuserinput.git
+
+[pyvnc]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pyvnc.git
+
+[pywebcopy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pywebcopy.git
+
+[pywerview]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pywerview.git
+
+[pywhat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/pywhat.git
+
+[qsslcaudit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/qsslcaudit.git
+
+[quark-engine]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/quark-engine.git
+
+[radiotap-library]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/radiotap-library.git
+
+[rainbowcrack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rainbowcrack.git
+
+[raspberrypi-userland]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/raspberrypi-userland.git
+
+[rcracki-mt]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rcracki-mt.git
+
+[realtek-rtl8188eus-dkms]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/realtek-rtl8188eus-dkms.git
+
+[realtek-rtl8814au-dkms]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/realtek-rtl8814au-dkms.git
+
+[realtek-rtl88xxau-dkms]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/realtek-rtl88xxau-dkms.git
+
+[rebind]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rebind.git
+
+[reconspider]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/reconspider.git
+
+[recstudio]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/recstudio.git
+
+[redeye]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/redeye.git
+
+[redfang]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/redfang.git
+
+[redsnarf]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/redsnarf.git
+
+[rekono-kbx]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rekono-kbx.git
+
+[responder]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/responder.git
+
+[rev-proxy-grapher]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rev-proxy-grapher.git
+
+[rfcat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rfcat.git
+
+[ridenum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ridenum.git
+
+[rizin]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rizin.git
+
+[rizin-cutter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rizin-cutter.git
+
+[rling]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rling.git
+
+[robotstxt]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/robotstxt.git
+
+[rootskel-gtk]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rootskel-gtk.git
+
+[ropper]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ropper.git
+
+[routerkeygenpc]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/routerkeygenpc.git
+
+[routersploit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/routersploit.git
+
+[rsh-redone]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rsh-redone.git
+
+[rsmangler]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rsmangler.git
+
+[rtpbreak]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rtpbreak.git
+
+[rtpflood]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rtpflood.git
+
+[rtpinsertsound]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rtpinsertsound.git
+
+[rtpmixsound]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rtpmixsound.git
+
+[ruby-async-dns]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-async-dns.git
+
+[ruby-cms-scanner]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-cms-scanner.git
+
+[ruby-ecdsa]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-ecdsa.git
+
+[ruby-fxruby]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-fxruby.git
+
+[ruby-glu]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-glu.git
+
+[ruby-glut]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-glut.git
+
+[ruby-iostruct]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-iostruct.git
+
+[ruby-maxmind-db]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-maxmind-db.git
+
+[ruby-opengl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-opengl.git
+
+[ruby-opt-parse-validator]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-opt-parse-validator.git
+
+[ruby-pedump]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-pedump.git
+
+[ruby-salsa20]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-salsa20.git
+
+[ruby-sha3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-sha3.git
+
+[ruby-winrm]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-winrm.git
+
+[ruby-winrm-fs]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-winrm-fs.git
+
+[ruby-zhexdump]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ruby-zhexdump.git
+
+[rule-engine]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rule-engine.git
+
+[rust-boringtun]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-boringtun.git
+
+[rust-internet-checksum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-internet-checksum.git
+
+[rust-internet-packet]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-internet-packet.git
+
+[rust-ip-network]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-ip-network.git
+
+[rust-ip-network-table]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-ip-network-table.git
+
+[rust-ip-network-table-deps-treebitmap]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-ip-network-table-deps-treebitmap.git
+
+[rust-landlock]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-landlock.git
+
+[rust-lru-time-cache]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-lru-time-cache.git
+
+[rust-managed]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-managed.git
+
+[rust-smoltcp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-smoltcp.git
+
+[rust-tun2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rust-tun2.git
+
+[rz-ghidra]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rz-ghidra.git
+
+[rzpipe]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/rzpipe.git
+
+[s3scanner]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/s3scanner.git
+
+[sakis3g]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sakis3g.git
+
+[samba]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/samba.git
+
+[sara]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sara.git
+
+[sarge]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sarge.git
+
+[sasquatch]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sasquatch.git
+
+[sbd]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sbd.git
+
+[sctpscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sctpscan.git
+
+[seclists]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/seclists.git
+
+[secure-socket-funneling]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/secure-socket-funneling.git
+
+[sentrypeer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sentrypeer.git
+
+[set]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/set.git
+
+[sfuzz]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sfuzz.git
+
+[sharpshooter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sharpshooter.git
+
+[shellfire]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/shellfire.git
+
+[shellnoob]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/shellnoob.git
+
+[shellter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/shellter.git
+
+[sickle-tool]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sickle-tool.git
+
+[sidguesser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sidguesser.git
+
+[sigma-cli]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sigma-cli.git
+
+[silenttrinity]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/silenttrinity.git
+
+[siparmyknife]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/siparmyknife.git
+
+[sipp]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sipp.git
+
+[sippts]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sippts.git
+
+[skipfish]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/skipfish.git
+
+[sleuthkit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sleuthkit.git
+
+[slimtoolkit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/slimtoolkit.git
+
+[sliver]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sliver.git
+
+[slowapi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/slowapi.git
+
+[smtp-user-enum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/smtp-user-enum.git
+
+[sn0int]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sn0int.git
+
+[sniffjoke]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sniffjoke.git
+
+[snmpcheck]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/snmpcheck.git
+
+[snmpenum]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/snmpenum.git
+
+[snort]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/snort.git
+
+[sparrow-wifi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sparrow-wifi.git
+
+[sparsebitset]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sparsebitset.git
+
+[sparta-scripts]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sparta-scripts.git
+
+[sphinxcontrib-excel]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sphinxcontrib-excel.git
+
+[spiderfoot]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spiderfoot.git
+
+[spike]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spike.git
+
+[spire]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spire.git
+
+[splinter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/splinter.git
+
+[spooftooph]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spooftooph.git
+
+[spray]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spray.git
+
+[sprayhound]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sprayhound.git
+
+[sprayingtoolkit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sprayingtoolkit.git
+
+[spraykatz]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spraykatz.git
+
+[spyse-python]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/spyse-python.git
+
+[sqldict]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sqldict.git
+
+[sqlmc]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sqlmc.git
+
+[sqlninja]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sqlninja.git
+
+[sqlsus]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sqlsus.git
+
+[sqsh]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sqsh.git
+
+[sslcrypto]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sslcrypto.git
+
+[sslstrip]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sslstrip.git
+
+[sslyze]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/sslyze.git
+
+[starkiller]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/starkiller.git
+
+[stix2]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/stix2.git
+
+[stix2-patterns]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/stix2-patterns.git
+
+[subfinder]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/subfinder.git
+
+[subjack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/subjack.git
+
+[syft]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/syft.git
+
+[syncer]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/syncer.git
+
+[tasksel]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tasksel.git
+
+[teamsploit]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/teamsploit.git
+
+[terraform]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/terraform.git
+
+[tetragon]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tetragon.git
+
+[tftpd32]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tftpd32.git
+
+[thc-pptp-bruter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/thc-pptp-bruter.git
+
+[thc-ssl-dos]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/thc-ssl-dos.git
+
+[theharvester]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/theharvester.git
+
+[thehive]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/thehive.git
+
+[tls-parser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tls-parser.git
+
+[tlssled]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tlssled.git
+
+[tnscmd10g]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tnscmd10g.git
+
+[token-bucket]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/token-bucket.git
+
+[trivy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/trivy.git
+
+[truecrack]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/truecrack.git
+
+[trufflehog]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/trufflehog.git
+
+[trufflehogregexes]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/trufflehogregexes.git
+
+[tundeep]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tundeep.git
+
+[twofi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/twofi.git
+
+[tzsetup]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/tzsetup.git
+
+[ubertooth]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ubertooth.git
+
+[ubi-reader]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/ubi-reader.git
+
+[uhd-images]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/uhd-images.git
+
+[unblob]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/unblob.git
+
+[unblob-native]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/unblob-native.git
+
+[unicorn-magic]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/unicorn-magic.git
+
+[unicornscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/unicornscan.git
+
+[uniscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/uniscan.git
+
+[unix-privesc-check]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/unix-privesc-check.git
+
+[unsafeopenssl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/unsafeopenssl.git
+
+[urlcrazy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/urlcrazy.git
+
+[vadersentiment]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/vadersentiment.git
+
+[veil]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/veil.git
+
+[villain]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/villain.git
+
+[voiphopper]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/voiphopper.git
+
+[vopono]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/vopono.git
+
+[vulners]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/vulners.git
+
+[watobo]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/watobo.git
+
+[waybackpy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/waybackpy.git
+
+[wce]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wce.git
+
+[web-cache-vulnerability-scanner]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/web-cache-vulnerability-scanner.git
+
+[web-greeter]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/web-greeter.git
+
+[webacoo]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/webacoo.git
+
+[webscarab]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/webscarab.git
+
+[webshells]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/webshells.git
+
+[wgetpaste]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wgetpaste.git
+
+[whatmask]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/whatmask.git
+
+[wifi-honey]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wifi-honey.git
+
+[wifiphisher]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wifiphisher.git
+
+[wifipumpkin3]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wifipumpkin3.git
+
+[wig-ng]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wig-ng.git
+
+[winacl]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/winacl.git
+
+[windows-binaries]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/windows-binaries.git
+
+[windows-privesc-check]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/windows-privesc-check.git
+
+[witnessme]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/witnessme.git
+
+[wmi]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wmi.git
+
+[wmis]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wmis.git
+
+[wordlistraider]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wordlistraider.git
+
+[wordlists]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wordlists.git
+
+[wotmate]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wotmate.git
+
+[wpa-sycophant]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wpa-sycophant.git
+
+[wpscan]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wpscan.git
+
+[writehat]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/writehat.git
+
+[wsgidav]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/wsgidav.git
+
+[xlutils]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/xlutils.git
+
+[xplico]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/xplico.git
+
+[xspy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/xspy.git
+
+[xsrfprobe]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/xsrfprobe.git
+
+[xsser]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/xsser.git
+
+[xtrx-dkms]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/xtrx-dkms.git
+
+[zaproxy]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/zaproxy.git
+
+[zeek]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/zeek.git
+
+[zonedb]
+checkout = gbp clone --debian-branch=xcyber360/master git@github.com:xcyber360/packages/zonedb.git
